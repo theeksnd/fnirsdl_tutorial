@@ -1,16 +1,135 @@
-# Tutorial of: Deep Learning from Diffuse Biomedical Optics Time-Series: An fNIRS-Focused Review of Recent Advancements and Future Directions.
+# 🧠 Deep Learning from Diffuse Biomedical Optics Time-Series  
+*A Tutorial Companion to the fNIRS-Focused Review of Recent Advancements and Future Directions*
 
-Creating the environments and downloading the datasets. 
-- Install Cedalion from our official [repository](https://github.com/ibs-lab/cedalion)
-- Download the datasets:
-  - BallSqueezing-HD from here. Please refer to the official publication for more details.
-  - Mental Arrythmatic Multi-Model dataset. Please refer to the official publication for more details.
-- Install PyTorch with or without cuda-support
+This repository provides a hands-on implementation tutorial for the paper:  
+**"Deep Learning from Diffuse Biomedical Optics Time-Series: An fNIRS-Focused Review of Recent Advancements and Future Directions."**
 
-Deep Learning model development pipeline.
-- To create the dataset, use the preprocessing.py code segment. Modify the directory information accordingly to point to the downloaded dataset locations.
-- By default, preprocessing.py will create a dataset without augmentation (0.5Hz), run the code again with different frequencies by modifying FMAX variable. In the paper, we used 0.7 and 1.0. 
-- Use the sessions.py file, only for BSQ-HD dataset to obtain the session specific train/validation split.  
-- Each folder contain specific script to train deep learning models (cvloso_*.py). Each of them correspond to the experiment types (e, e.f, e.t and e.f.t)
-- Modify the model traning codes accordignly with the directory/file information. You will need to make sure the dataset folders, and any additional files are within the correct directory structure.
-- To save the additional meta information, create models and loss folder. Please checkout the code, we are saving the performance stats per-each epoch and the model is saved based on the validaiton losses. 
+---
+
+## 📂 Table of Contents
+
+- [1. Environment Setup](#1-environment-setup)
+- [2. Dataset Access](#2-dataset-access)
+- [3. Preprocessing](#3-preprocessing)
+- [4. Session-Wise Splitting (BSQ-HD)](#4-session-wise-splitting-bsq-hd)
+- [5. Model Training](#5-model-training)
+- [6. Saving and Logging](#6-saving-and-logging)
+- [7. Citation](#7-citation)
+- [8. Contact](#8-contact)
+
+---
+
+## 1. 🚀 Environment Setup
+
+### Install Cedalion
+
+Clone and install [Cedalion](https://github.com/ibs-lab/cedalion):
+
+```bash
+git clone https://github.com/ibs-lab/cedalion.git
+cd cedalion
+pip install -e .
+```
+
+### Install PyTorch
+
+Follow the official [PyTorch installation guide](https://pytorch.org/get-started/locally) to install it with or without CUDA support.
+
+---
+
+## 2. 📥 Dataset Access
+
+Please download the following datasets manually:
+
+- **Ball Squeezing HD Dataset (BSQ-HD)**  
+  Refer to the official publication for access and details.
+
+- **Mental Arithmetic Multi-Modal Dataset**  
+  Refer to the original publication for details.
+
+---
+
+## 3. 🧪 Preprocessing
+
+Use `preprocessing.py` to convert raw recordings into model-ready datasets.
+
+```bash
+python preprocessing.py
+```
+
+- Edit `preprocessing.py` to set the correct dataset paths.
+- By default, the dataset is filtered at **0.5 Hz**.
+- To try additional frequency bands (used in the paper: `0.7 Hz`, `1.0 Hz`), modify the `FMAX` variable.
+
+---
+
+## 4. 📑 Session-Wise Splitting (BSQ-HD)
+
+Run `sessions.py` to generate session-specific train/validation splits for BSQ-HD:
+
+```bash
+python sessions.py
+```
+
+This step is **only required for BSQ-HD**.
+
+---
+
+## 5. 🧠 Model Training
+
+Each dataset folder includes multiple training scripts:
+
+| Script             | Purpose                              |
+|--------------------|---------------------------------------|
+| `cvloso_e.py`      | Event-based classification            |
+| `cvloso_ef.py`     | Event + Frequency model               |
+| `cvloso_et.py`     | Event + Temporal structure            |
+| `cvloso_eft.py`    | Full model (Event + Frequency + Temporal) |
+
+Update the training scripts with:
+- Dataset file paths
+- Any necessary config parameters (e.g., batch size, learning rate)
+
+Make sure required directories are created beforehand:
+```bash
+mkdir -p models loss
+```
+
+---
+
+## 6. 💾 Saving and Logging
+
+- Model checkpoints are saved per-epoch based on **validation loss**.
+- Training loss, validation metrics, and learning curves are stored in the `loss/` directory.
+
+Example output folder structure:
+
+```
+project_root/
+├── data/
+├── models/
+├── loss/
+├── preprocessing.py
+├── sessions.py
+└── cvloso_eft.py
+```
+
+---
+
+## 7. 📚 Citation
+
+If you use this code or find it helpful, please cite:
+
+```
+[Insert citation for the review/tutorial paper]
+```
+
+---
+
+## 8. 📬 Contact
+
+For questions or collaborations, feel free to reach out:
+
+- 🧑‍💻 Maintainer: [Your Name]
+- 🏢 Affiliation: BIFOLD / TU Berlin, Monash University
+- ✉️ Email: your.email@domain.com
