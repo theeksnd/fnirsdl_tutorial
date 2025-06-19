@@ -88,7 +88,9 @@ Each dataset folder includes multiple training scripts:
 
 Update the training scripts with:
 - Dataset file paths
-- Any necessary config parameters (e.g., batch size, learning rate)
+- Any necessary config parameters (e.g., batch size, learning rate), we have given the defaults
+- Models (`CNN2D_BaselineV2`, `MSTCN_WRAP`, `Transformer` and `resnet1d101`)
+- Make sure to change the model name (e.g. `NAME = "Transformer_cvloseo_v0_e-7"`)`
 
 Make sure the required directories are created beforehand:
 ```bash
@@ -130,6 +132,5 @@ The paper is under review
 
 For questions or collaborations, feel free to reach out:
 
-- 🧑‍💻 Maintainer: [Your Name]
-- 🏢 Affiliation: BIFOLD / TU Berlin, Monash University
-- ✉️ Email: your.email@domain.com
+- 🧑‍💻 Maintainer: Theekshana Dissanayake
+- 🏢 Affiliation: IBS/BIFOLD/TU Berlin
