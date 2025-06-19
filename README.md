@@ -1,5 +1,5 @@
-# 🧠 Deep Learning from Diffuse Biomedical Optics Time-Series  
-*A Tutorial Companion to the fNIRS-Focused Review of Recent Advancements and Future Directions*
+# 🧠 Deep Learning from fNIRS Time-Series  
+*A Tutorial Companion for fNIRS classification tasks across two datasets and five deep learning models, including transformer and residual-nets*
 
 This repository provides a hands-on implementation tutorial for the paper:  
 **"Deep Learning from Diffuse Biomedical Optics Time-Series: An fNIRS-Focused Review of Recent Advancements and Future Directions."**
@@ -84,13 +84,13 @@ Each dataset folder includes multiple training scripts:
 | `cvloso_e.py`      | Event-based classification            |
 | `cvloso_ef.py`     | Event + Frequency model               |
 | `cvloso_et.py`     | Event + Temporal structure            |
-| `cvloso_eft.py`    | Full model (Event + Frequency + Temporal) |
+| `cvloso_eft.py`    | Full Data (Event + Frequency + Temporal) |
 
 Update the training scripts with:
 - Dataset file paths
 - Any necessary config parameters (e.g., batch size, learning rate)
 
-Make sure required directories are created beforehand:
+Make sure the required directories are created beforehand:
 ```bash
 mkdir -p models loss
 ```
@@ -105,7 +105,7 @@ mkdir -p models loss
 Example output folder structure:
 
 ```
-project_root/
+bsq_db/
 ├── data/
 ├── models/
 ├── loss/
@@ -121,7 +121,7 @@ project_root/
 If you use this code or find it helpful, please cite:
 
 ```
-[Insert citation for the review/tutorial paper]
+The paper is under review
 ```
 
 ---
