@@ -33,7 +33,7 @@ pip install -e .
 
 ### Install PyTorch
 
-Follow the official [PyTorch installation guide](https://pytorch.org/get-started/locally) to install it with or without CUDA support.
+Follow the official [PyTorch installation guide](https://pytorch.org/get-started/locally) to install it with CUDA support (recommended).
 
 ---
 
