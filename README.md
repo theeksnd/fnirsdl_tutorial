@@ -1,4 +1,4 @@
-# 🧠 Deep Learning from fNIRS Time-Series  
+# Deep Learning from fNIRS Time-Series  
 *A Tutorial Companion for fNIRS classification tasks across two datasets and five deep learning models, including transformer and residual-nets*
 
 This repository provides a hands-on implementation tutorial for the paper:  
@@ -6,7 +6,7 @@ This repository provides a hands-on implementation tutorial for the paper:
 
 ---
 
-## 📂 Table of Contents
+## Table of Contents
 
 - [1. Environment Setup](#1-environment-setup)
 - [2. Dataset Access](#2-dataset-access)
@@ -19,7 +19,7 @@ This repository provides a hands-on implementation tutorial for the paper:
 
 ---
 
-## 1. 🚀 Environment Setup
+## 1.Environment Setup
 
 ### Install Cedalion
 
@@ -37,19 +37,18 @@ Follow the official [PyTorch installation guide](https://pytorch.org/get-started
 
 ---
 
-## 2. 📥 Dataset Access
+## 2.Dataset Access
 
 Please download the following datasets manually:
 
 - **Ball Squeezing HD Dataset (BSQ-HD)**  
-  Refer to the official publication for access and details.
+  Refer to the official [publication](https://www.spiedigitallibrary.org/journals/neurophotonics/volume-10/issue-2/025007/Short-separation-regression-incorporated-diffuse-optical-tomography-image-reconstruction-modeling/10.1117/1.NPh.10.2.025007.full) for access and details.
 
 - **Mental Arithmetic Multi-Modal Dataset**  
-  Refer to the original publication for details.
-
+  Refer to the original [publication](https://ieeexplore.ieee.org/document/7742400) for details on downloading the dataset. Then use the `shin_to_nirs.m` MATLAB script to convert the data to Cedalion-compatible snirf format. For this, you will have to install the [Homer3](https://github.com/BUNPC/Homer3) library  
 ---
 
-## 3. 🧪 Preprocessing
+## 3.Preprocessing
 
 Use `preprocessing.py` to convert raw recordings into model-ready datasets.
 
@@ -63,7 +62,7 @@ python preprocessing.py
 
 ---
 
-## 4. 📑 Session-Wise Splitting (BSQ-HD)
+## 4.Session-Wise Splitting (BSQ-HD)
 
 Run `sessions.py` to generate session-specific train/validation splits for BSQ-HD:
 
@@ -75,7 +74,7 @@ This step is **only required for BSQ-HD**.
 
 ---
 
-## 5. 🧠 Model Training
+## 5.Model Training
 
 Each dataset folder includes multiple training scripts:
 
@@ -99,7 +98,7 @@ mkdir -p models loss
 
 ---
 
-## 6. 💾 Saving and Logging
+## 6.Saving and Logging
 
 - Model checkpoints are saved per-epoch based on **validation loss**.
 - Training loss, validation metrics, and learning curves are stored in the `loss/` directory.
@@ -118,7 +117,7 @@ bsq_db/
 
 ---
 
-## 7. 📚 Citation
+## 7.Citation
 
 If you use this code or find it helpful, please cite:
 
@@ -128,7 +127,7 @@ The paper is under review
 
 ---
 
-## 8. 📬 Contact
+## 8.Contact
 
 For questions or collaborations, feel free to reach out:
 
