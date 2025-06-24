@@ -114,7 +114,7 @@ bsq_db/
 ├── sessions.py
 └── cvloso_eft.py
 ```
-
+- For XAI testing, use the `xai_testing.py` code. For this, you will have to install the [Captum](https://captum.ai/api/integrated_gradients.html) library. To generate visualizations, use Cedalion montage plot examples [here](https://doc.ibs.tu-berlin.de/cedalion/doc/dev/examples/plots_visualization/12_plots_example.html)
 ---
 
 ## 7.Citation
