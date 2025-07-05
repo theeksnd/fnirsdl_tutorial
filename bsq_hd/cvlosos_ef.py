@@ -228,15 +228,19 @@ if __name__ == '__main__':
         with open('files_to_sessions_dv2.pkl', 'rb') as handle:
             files_to_sessions = pickle.load(handle) 
 
-        train_data_, validation_data = [], []
+        train_data_, validation_data_all = [], []
         for file in train_data:
             if files_to_sessions[file] in ['run-1', 'run-2']:
                 train_data_.append(file)
             else:
-                validation_data.append(file)
+                validation_data_all.append(file)
         train_data = np.array(train_data_)
+        # remove other freq augmentations
+        validation_data = []
+        for file in validation_data_all:
+            if 'frq0.5' in file:
+                validation_data.append(file)
         validation_data = np.array(validation_data)
-
         #here, let's select non-aug for train
         # non-aug + aug for validation
         # test on non-aug + aug
