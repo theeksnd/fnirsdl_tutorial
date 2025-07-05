@@ -1,5 +1,5 @@
 # Deep Learning from fNIRS Time-Series  
-*A Tutorial Companion for fNIRS classification tasks across two datasets and five deep learning models, including transformer and residual-nets*
+*A Tutorial Companion for fNIRS classification tasks across two datasets and four deep learning models, including transformer and residual-nets*
 
 This repository provides a hands-on implementation tutorial for the paper:  
 **"Deep Learning from Diffuse Biomedical Optics Time-Series: An fNIRS-Focused Review of Recent Advancements and Future Directions."**
@@ -86,10 +86,10 @@ Each dataset folder includes multiple training scripts:
 | `cvloso_eft.py`    | Full Data (Event + Frequency + Temporal) |
 
 Update the training scripts with:
-- Dataset file paths
-- Any necessary config parameters (e.g., batch size, learning rate), we have given the defaults
+- Dataset file paths around lines [253, 287].
+- Any necessary config parameters (e.g., batch size, learning rate), we have given the defaults.
 - Models: `CNN2D_BaselineV2`, `MSTCN_WRAP`, `Transformer` and `resnet1d101` modified from [here](https://github.com/helme/ecg_ptbxl_benchmarking)
-- Make sure to change the model name (e.g. `NAME = "Transformer_cvloseo_v0_e-7"`)`
+- Make sure to change the model name (e.g. `NAME = "Transformer_cvloseo_v0_e-7"`)`.
 
 Make sure the required directories are created beforehand:
 ```bash
