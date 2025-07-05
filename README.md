@@ -86,7 +86,7 @@ Each dataset folder includes multiple training scripts:
 | `cvloso_eft.py`    | Full Data (Event + Frequency + Temporal) |
 
 Update the training scripts with:
-- Dataset file paths around lines [253, 287].
+- Dataset file paths around lines `[253, 287]`.
 - Any necessary config parameters (e.g., batch size, learning rate), we have given the defaults.
 - Models: `CNN2D_BaselineV2`, `MSTCN_WRAP`, `Transformer` and `resnet1d101` modified from [here](https://github.com/helme/ecg_ptbxl_benchmarking)
 - Make sure to change the model name (e.g. `NAME = "Transformer_cvloseo_v0_e-7"`)`.
